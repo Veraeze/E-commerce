@@ -48,8 +48,13 @@ const Navbar = () => {
             <img onClick={()=>setVisible(true)} src={assets.menu_icon} className='w-5 cursor-pointer sm:hidden' alt=''/>
         </div>
         {/* {sidebar menu for small screen} */}
-        <div className=''>
-
+        <div className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-white transition-all ${visible ? 'w-full' : 'w-0'}`}>
+            <div className='flex flex-col text-gray-600'>
+                <div onClick={()=>setVisible(false)} className='flex items-center gap-4 p-3'>
+                    <img className='h-4 rotate-180' src={assets.dropdown_icon} alt=''/>
+                    <p>Back</p>
+                </div>
+            </div>
         </div>
     </div>
   )
