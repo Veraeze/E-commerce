@@ -9,10 +9,53 @@ const Collection = () => {
     const {products} = useContext(ShopContext);
     const [showFilter, setShowFilter] = useState(false);
     const [filterProducts, setFilterProducts] = useState([]);
+    const [category, setCategory] =useState([]);
+    const [brand, setBrand] = useState([]);
+    
+    const toggleCategory = (event) => {
+
+        if (category.includes(event.target.value)) {
+          setCategory(prev => prev.filter(item => item !== event.target.value))
+        }
+        else{
+          setCategory(prev => [...prev, event.target.value])
+        }
+
+    }
+
+    const toggleBrand = (e) => {
+
+      if (brand.includes(e.target.value)) {
+        setBrand(prev => prev.filter(item => item !== e.target.value))
+      }
+      else{
+        setBrand(prev => [...prev, e.target.value])
+      }
+
+    }
+
+    const applyFilter = () => {
+
+        let productsCopy = products.slice();
+
+        if (category.length > 0) {
+          productsCopy = productsCopy.filter(item =>category.includes(item.category))
+        }
+
+        setFilterProducts(productsCopy)
+
+    }
 
     useEffect(()=>{
       setFilterProducts(products);
     })
+
+      useEffect(() => {
+        applyFilter();
+      }, [category,brand])
+
+  
+
   return (
     <div className='flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t'>
       {/* filter options */}
@@ -26,27 +69,27 @@ const Collection = () => {
             <p className='mb-3 text-sm font-medium'>CATEGORIES</p>
             <div className=' flex flex-col gap-2 text-sm font-light text-gray-700'>
               <p className='flex gap-2'>
-                <input className='w-3' type="checkbox" value={'Phones'}/>
+                <input className='w-3' type="checkbox" value={'Phones'} onChange={toggleCategory}/>
                 Phones
               </p>
               <p className='flex gap-2'>
-                <input className='w-3' type="checkbox" value={'Monitors'}/>
+                <input className='w-3' type="checkbox" value={'Monitors'} onChange={toggleCategory}/>
                 Monitors
               </p>
               <p className='flex gap-2'>
-                <input className='w-3' type="checkbox" value={'Speakers'}/>
+                <input className='w-3' type="checkbox" value={'Speakers'} onChange={toggleCategory}/>
                 Speakers
               </p>
               <p className='flex gap-2'>
-                <input className='w-3' type="checkbox" value={'Laptops'}/>
+                <input className='w-3' type="checkbox" value={'Laptops'} onChange={toggleCategory}/>
                 Laptops
               </p>
               <p className='flex gap-2'>
-                <input className='w-3' type="checkbox" value={'Mouse'}/>
+                <input className='w-3' type="checkbox" value={'Mouse'} onChange={toggleCategory}/>
                 Mouse
               </p>
               <p className='flex gap-2'>
-                <input className='w-3' type="checkbox" value={'Headphones'}/>
+                <input className='w-3' type="checkbox" value={'Headphones'} onChange={toggleCategory}/>
                 Headphones
               </p>
             </div>
@@ -57,47 +100,47 @@ const Collection = () => {
             <p className='mb-3 text-sm font-medium'>BRAND</p>
             <div className=' flex flex-col gap-2 text-sm font-light text-gray-700'>
               <p className='flex gap-2'>
-                <input className='w-3' type="checkbox" value={'Apple'}/>
+                <input className='w-3' type="checkbox" value={'Apple'} onChange={toggleBrand}/>
                 Apple
               </p>
               <p className='flex gap-2'>
-                <input className='w-3' type="checkbox" value={'Huawei'}/>
+                <input className='w-3' type="checkbox" value={'Huawei'} onChange={toggleBrand}/>
                 Huawei
               </p>
               <p className='flex gap-2'>
-                <input className='w-3' type="checkbox" value={'Samsung'}/>
+                <input className='w-3' type="checkbox" value={'Samsung'} onChange={toggleBrand}/>
                 Samsung
               </p>
               <p className='flex gap-2'>
-                <input className='w-3' type="checkbox" value={'Dell'}/>
+                <input className='w-3' type="checkbox" value={'Dell'} onChange={toggleBrand}/>
                 Dell
               </p>
               <p className='flex gap-2'>
-                <input className='w-3' type="checkbox" value={'B&O'}/>
+                <input className='w-3' type="checkbox" value={'B&O'} onChange={toggleBrand}/>
                 Bang & Olufsen
               </p>
               <p className='flex gap-2'>
-                <input className='w-3' type="checkbox" value={'Hp'}/>
+                <input className='w-3' type="checkbox" value={'Hp'} onChange={toggleBrand}/>
                 Hp
               </p>
               <p className='flex gap-2'>
-                <input className='w-3' type="checkbox" value={'Sony'}/>
+                <input className='w-3' type="checkbox" value={'Sony'} onChange={toggleBrand}/>
                 Sony
               </p>
               <p className='flex gap-2'>
-                <input className='w-3' type="checkbox" value={'JBL'}/>
+                <input className='w-3' type="checkbox" value={'JBL'} onChange={toggleBrand}/>
                 JBL
               </p>
               <p className='flex gap-2'>
-                <input className='w-3' type="checkbox" value={'Das'}/>
+                <input className='w-3' type="checkbox" value={'Das'} onChange={toggleBrand}/>
                 Das
               </p>
               <p className='flex gap-2'>
-                <input className='w-3' type="checkbox" value={'Onn'}/>
+                <input className='w-3' type="checkbox" value={'Onn'} onChange={toggleBrand}/>
                 Onn
               </p>
               <p className='flex gap-2'>
-                <input className='w-3' type="checkbox" value={'Logitech'}/>
+                <input className='w-3' type="checkbox" value={'Logitech'} onChange={toggleBrand}/>
                 Logitech
               </p>
             </div>
