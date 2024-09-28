@@ -10,26 +10,27 @@ const Collection = () => {
     const [showFilter, setShowFilter] = useState(false);
     const [filterProducts, setFilterProducts] = useState([]);
     const [category, setCategory] =useState([]);
-    const [brand, setBrand] = useState([]);
+    const [subCategory, setSubCategory] = useState([]);
+    const [sortType, setSortType] = useState('relevant');
     
-    const toggleCategory = (event) => {
+    const toggleCategory = (e) => {
 
-        if (category.includes(event.target.value)) {
-          setCategory(prev => prev.filter(item => item !== event.target.value))
+        if (category.includes(e.target.value)) {
+          setCategory(prev => prev.filter(item => item !== e.target.value))
         }
         else{
-          setCategory(prev => [...prev, event.target.value])
+          setCategory(prev => [...prev, e.target.value])
         }
 
     }
 
-    const toggleBrand = (e) => {
+    const toggleSubCategory = (e) => {
 
-      if (brand.includes(e.target.value)) {
-        setBrand(prev => prev.filter(item => item !== e.target.value))
+      if (subCategory.includes(e.target.value)) {
+        setSubCategory(prev => prev.filter(item => item !== e.target.value))
       }
       else{
-        setBrand(prev => [...prev, e.target.value])
+        setSubCategory(prev => [...prev, e.target.value])
       }
 
     }
@@ -39,22 +40,47 @@ const Collection = () => {
         let productsCopy = products.slice();
 
         if (category.length > 0) {
-          productsCopy = productsCopy.filter(item =>category.includes(item.category))
+          productsCopy = productsCopy.filter(item => category.includes(item.category));
         }
 
+        if (subCategory.length > 0) {
+          productsCopy = productsCopy.filter(item => subCategory.includes(item.subCategory))
+        }
         setFilterProducts(productsCopy)
 
     }
 
+    const sortProduct = () => {
+
+      let filterProductsCopy = filterProducts.slice();
+
+      switch (sortType) {
+        case 'high-low':
+          setFilterProducts(filterProductsCopy.sort((a,b)=>(b.price - a.price)));
+          break;
+        
+        case 'low-high':
+          setFilterProducts(filterProductsCopy.sort((a,b)=>(a.price - b.price)));
+          break;
+
+        default:
+          applyFilter();
+          break
+      }
+
+    }
+
+    // useEffect(()=>{
+    //   setFilterProducts(products);
+    // },[])
+
+    useEffect(() => {
+      applyFilter();
+    }, [category,subCategory])
+
     useEffect(()=>{
-      setFilterProducts(products);
-    })
-
-      useEffect(() => {
-        applyFilter();
-      }, [category,brand])
-
-  
+      sortProduct()
+    }, [sortType])
 
   return (
     <div className='flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t'>
@@ -100,47 +126,47 @@ const Collection = () => {
             <p className='mb-3 text-sm font-medium'>BRAND</p>
             <div className=' flex flex-col gap-2 text-sm font-light text-gray-700'>
               <p className='flex gap-2'>
-                <input className='w-3' type="checkbox" value={'Apple'} onChange={toggleBrand}/>
+                <input className='w-3' type="checkbox" value={'Apple'} onChange={toggleSubCategory}/>
                 Apple
               </p>
               <p className='flex gap-2'>
-                <input className='w-3' type="checkbox" value={'Huawei'} onChange={toggleBrand}/>
+                <input className='w-3' type="checkbox" value={'Huawei'} onChange={toggleSubCategory}/>
                 Huawei
               </p>
               <p className='flex gap-2'>
-                <input className='w-3' type="checkbox" value={'Samsung'} onChange={toggleBrand}/>
+                <input className='w-3' type="checkbox" value={'Samsung'} onChange={toggleSubCategory}/>
                 Samsung
               </p>
               <p className='flex gap-2'>
-                <input className='w-3' type="checkbox" value={'Dell'} onChange={toggleBrand}/>
+                <input className='w-3' type="checkbox" value={'Dell'} onChange={toggleSubCategory}/>
                 Dell
               </p>
               <p className='flex gap-2'>
-                <input className='w-3' type="checkbox" value={'B&O'} onChange={toggleBrand}/>
+                <input className='w-3' type="checkbox" value={'B&O'} onChange={toggleSubCategory}/>
                 Bang & Olufsen
               </p>
               <p className='flex gap-2'>
-                <input className='w-3' type="checkbox" value={'Hp'} onChange={toggleBrand}/>
+                <input className='w-3' type="checkbox" value={'Hp'} onChange={toggleSubCategory}/>
                 Hp
               </p>
               <p className='flex gap-2'>
-                <input className='w-3' type="checkbox" value={'Sony'} onChange={toggleBrand}/>
+                <input className='w-3' type="checkbox" value={'Sony'} onChange={toggleSubCategory}/>
                 Sony
               </p>
               <p className='flex gap-2'>
-                <input className='w-3' type="checkbox" value={'JBL'} onChange={toggleBrand}/>
+                <input className='w-3' type="checkbox" value={'JBL'} onChange={toggleSubCategory}/>
                 JBL
               </p>
               <p className='flex gap-2'>
-                <input className='w-3' type="checkbox" value={'Das'} onChange={toggleBrand}/>
+                <input className='w-3' type="checkbox" value={'Das'} onChange={toggleSubCategory}/>
                 Das
               </p>
               <p className='flex gap-2'>
-                <input className='w-3' type="checkbox" value={'Onn'} onChange={toggleBrand}/>
+                <input className='w-3' type="checkbox" value={'Onn'} onChange={toggleSubCategory}/>
                 Onn
               </p>
               <p className='flex gap-2'>
-                <input className='w-3' type="checkbox" value={'Logitech'} onChange={toggleBrand}/>
+                <input className='w-3' type="checkbox" value={'Logitech'} onChange={toggleSubCategory}/>
                 Logitech
               </p>
             </div>
@@ -154,7 +180,7 @@ const Collection = () => {
           <Title text1={'ALL'} text2={'COLLECTIONS'}/>
 
           {/* sort products */}
-          <select className='border-2 border-gray-300 text-sm px-2'>
+          <select className='border-2 border-gray-300 text-sm px-2' onChange={(event)=>setSortType(event.target.value)}>
             <option value="relevant">Sort by: Relevant</option>
             <option value="low-high">Sort by: Low to High</option>
             <option value="high-low">Sort by: High to Low</option>
