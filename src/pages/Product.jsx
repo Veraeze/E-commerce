@@ -2,13 +2,15 @@ import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { ShopContext } from '../context/ShopContext';
 import { assets } from '../assets/assets';
+import RelatedProducts from '../components/RelatedProducts';
 
 const Product = () => {
 
   const {productId} = useParams();
   const {products, currency} = useContext(ShopContext);
   const [productData, setProductData] = useState(false);
-  const [image, setImage] = useState('')
+  const [image, setImage] = useState('');
+  const [color, setColor] = useState('');
 
   const fetchProductData = async () => {
 
@@ -58,15 +60,38 @@ const Product = () => {
             <p className='mt-5 text-3xl font-medium'>{currency}{productData.price}</p>
             <p className='mt-5 text-gray-500 md:w-4/5'>{productData.description}</p>
             <div className='flex flex-col my-8'>
-                <p>Select Color</p>
+                <p className='pb-4'>Select Color</p>
                 <div className='flex gap-2'>
-                  {productData.colors.map((item, index)=>(
-                    <button key={index}>{item}</button>
+                  {productData.colors.map((item, index)=>( 
+                    <button className={`border py-2 px-4 bg-gray-100 ${item === color ? 'border-orange-500' : ''}`} onClick={()=>setColor(item)} key={index}>{item}</button>
                   ))}
                 </div>
             </div>
+            <button className='bg-black text-white px-8 py-3 text-sm active:bg-gray-700'>ADD TO CART</button>
+            <hr className='mt-8 sm:w-4/5'/>
+            <div className='text-sm text-gray-500 mt-5 flex flex-col gap-1'>
+              <p>100% Original product</p>
+              <p>Cash on delivery is not available for this product.</p>
+              <p>Easy return and exchange policy within 7 days</p>
+            </div>
         </div>
       </div>
+      {/* description section */}
+      <div className='mt-20'>
+        <div className='flex'>
+          <b className='border px-5 py-3 text-sm'>Discount terms</b>
+          <p className='border px-5 py-3 text-sm'>Reviews (205)</p>
+        </div>
+        <div className='flex flex-col gap-4 border px-6 py-6 text-gray-500'>
+            <p>Where an online offer states that a discount is given on a purchase up to a stated percentage, the discount given will only be applicable to qualifying products and the percentage of discount given will vary between qualifying products.</p>
+            <p>Supplementary charges such as delivery or postage & packing shall not be discounted unless specifically stated in the promotion description.
+            Refunds for goods purchased under a promotional offer will be based on the terms of the promotional price. Your statutory rights are not affected.</p>      
+        </div>
+      </div>
+
+      {/* related products */}
+      <RelatedProducts category={productData.category} subCategory={productData.subCategory}/>
+
     </div>
   ) : <div className='opacity-0'></div>
 }
