@@ -102,7 +102,7 @@ export const products = [
         image: [p_img1],
         category: "Phones",
         subCategory: "Apple",
-        colors: ["W", "B", "C"],
+        colors: ["White", "Black", "Colored"],
         date: 1716634345448,
         bestseller: true
     },
@@ -114,7 +114,7 @@ export const products = [
         image: [p_img2_1,p_img2_2],
         category: "Phones",
         subCategory: "Apple",
-        colors: ["C", "B"],
+        colors: ["Colored", "Black"],
         date: 1716621345448,
         bestseller: true
     },
@@ -126,7 +126,7 @@ export const products = [
         image: [p_img3],
         category: "Phones",
         subCategory: "Samsung",
-        colors: ["W", "B"],
+        colors: ["White", "Black"],
         date: 1716234545448,
         bestseller: true
     },
@@ -138,7 +138,7 @@ export const products = [
         image: [p_img4],
         category: "Headphones",
         subCategory: "Apple",
-        colors: ["W", "B", "C"],
+        colors: ["White", "Black", "Colored"],
         date: 1716621345448,
         bestseller: true
     },
@@ -150,7 +150,7 @@ export const products = [
         image: [p_img5],
         category: "Laptops",
         subCategory: "Hp",
-        colors: ["C", "B"],
+        colors: ["Colored", "Black"],
         date: 1716622345448,
         bestseller: true
     },
@@ -162,7 +162,7 @@ export const products = [
         image: [p_img6],
         category: "Laptops",
         subCategory: "Apple",
-        colors: ["W", "B"],
+        colors: ["White", "Black"],
         date: 1716623423448,
         bestseller: true
     },
@@ -174,7 +174,7 @@ export const products = [
         image: [p_img7],
         category: "Phones",
         subCategory: "Huawei",
-        colors: ["W", "B"],
+        colors: ["White", "Black"],
         date: 1716621542448,
         bestseller: false
     },
@@ -186,7 +186,7 @@ export const products = [
         image: [p_img8],
         category: "Headphones",
         subCategory: "B&O",
-        colors: ["W", "C"],
+        colors: ["White", "Colored"],
         date: 1716622345448,
         bestseller: false
     },
@@ -198,7 +198,7 @@ export const products = [
         image: [p_img9],
         category: "Monitors",
         subCategory: "Hp",
-        colors: ["W", "B"],
+        colors: ["White", "Black"],
         date: 1716621235448,
         bestseller: false
     },
@@ -210,7 +210,7 @@ export const products = [
         image: [p_img10],
         category: "Mouse",
         subCategory: "Onn",
-        colors: ["W"],
+        colors: ["White"],
         date: 1716622235448,
         bestseller: false
     },
@@ -222,7 +222,7 @@ export const products = [
         image: [p_img11],
         category: "Phones",
         subCategory: "Apple",
-        colors: ["W", "B", "C"],
+        colors: ["White", "Black", "Colored"],
         date: 1716623345448,
         bestseller: false
     },
@@ -234,7 +234,7 @@ export const products = [
         image: [p_img12],
         category: "Phones",
         subCategory: "Huawei",
-        colors: ["B", "C"],
+        colors: ["Black", "Colored"],
         date: 1716624445448,
         bestseller: false
     },
@@ -246,7 +246,7 @@ export const products = [
         image: [p_img13],
         category: "Laptops",
         subCategory: "Dell",
-        colors: ["B"],
+        colors: ["Black"],
         date: 1716625545448,
         bestseller: false
     },
@@ -258,7 +258,7 @@ export const products = [
         image: [p_img14],
         category: "Laptops",
         subCategory: "Dell",
-        colors: ["B", "C"],
+        colors: ["Black", "Colored"],
         date: 1716626645448,
         bestseller: false
     },
@@ -270,7 +270,7 @@ export const products = [
         image: [p_img15],
         category: "Headphones",
         subCategory: "Sony",
-        colors: ["W", "B"],
+        colors: ["White", "Black"],
         date: 1716627745448,
         bestseller: false
     },
@@ -282,7 +282,7 @@ export const products = [
         image: [p_img16],
         category: "Headphones",
         subCategory: "B&O",
-        colors: ["W", "B"],
+        colors: ["White", "Black"],
         date: 1716628845448,
         bestseller: false
     },
@@ -294,7 +294,7 @@ export const products = [
         image: [p_img17],
         category: "Phones",
         subCategory: "Huawei",
-        colors: ["W", "B"],
+        colors: ["White", "Black"],
         date: 1716629945448,
         bestseller: false
     },
@@ -306,7 +306,7 @@ export const products = [
         image: [p_img18],
         category: "Phones",
         subCategory: "Huawei",
-        colors: ["W", "B"],
+        colors: ["White", "Black"],
         date: 1716631045448,
         bestseller: false
     },
@@ -318,7 +318,7 @@ export const products = [
         image: [p_img19],
         category: "Speakers",
         subCategory: "B&O",
-        colors: ["W", "B"],
+        colors: ["White", "Black"],
         date: 1716632145448,
         bestseller: false
     },
@@ -330,7 +330,7 @@ export const products = [
         image: [p_img20],
         category: "Monitors",
         subCategory: "Logitech",
-        colors: ["W", "B"],
+        colors: ["White", "Black"],
         date: 1716633245448,
         bestseller: false
     },
@@ -342,7 +342,7 @@ export const products = [
         image: [p_img21],
         category: "Keyboards",
         subCategory: "Dell",
-        colors: ["W", "B"],
+        colors: ["White", "Black"],
         date: 1716634345448,
         bestseller: false
     },
@@ -354,7 +354,7 @@ export const products = [
         image: [p_img22],
         category: "Phones",
         subCategory: "Apple",
-        colors: ["W", "B"],
+        colors: ["White", "Black"],
         date: 1716635445448,
         bestseller: false
     },
@@ -366,7 +366,7 @@ export const products = [
         image: [p_img23],
         category: "Headphones",
         subCategory: "Sony",
-        colors: ["W", "B"],
+        colors: ["White", "Black"],
         date: 1716636545448,
         bestseller: false
     },
@@ -378,7 +378,7 @@ export const products = [
         image: [p_img24],
         category: "Phones",
         subCategory: "Apple",
-        colors: ["W", "B"],
+        colors: ["White", "Black"],
         date: 1716637645448,
         bestseller: false
     },
@@ -390,7 +390,7 @@ export const products = [
         image: [p_img25],
         category: "Headphones",
         subCategory: "B&O",
-        colors: ["W", "B"],
+        colors: ["White", "Black"],
         date: 1716638745448,
         bestseller: false
     },
@@ -402,7 +402,7 @@ export const products = [
         image: [p_img26],
         category: "Laptops",
         subCategory: "Dell",
-        colors: ["W", "B"],
+        colors: ["White", "Black"],
         date: 1716639845448,
         bestseller: false
     },
@@ -414,7 +414,7 @@ export const products = [
         image: [p_img27],
         category: "Laptops",
         subCategory: "Dell",
-        colors: ["W", "B"],
+        colors: ["White", "Black"],
         date: 1716640945448,
         bestseller: false
     },
@@ -426,7 +426,7 @@ export const products = [
         image: [p_img28],
         category: "Speakers",
         subCategory: "Sony",
-        colors: ["W", "B"],
+        colors: ["White", "Black"],
         date: 1716642045448,
         bestseller: false
     },
@@ -438,7 +438,7 @@ export const products = [
         image: [p_img29],
         category: "Phones",
         subCategory: "Samsung",
-        colors: ["W", "B"],
+        colors: ["White", "Black"],
         date: 1716643145448,
         bestseller: false
     },
@@ -450,7 +450,7 @@ export const products = [
         image: [p_img30],
         category: "Phones",
         subCategory: "Huawei",
-        colors: ["W", "B"],
+        colors: ["White", "Black"],
         date: 1716644245448,
         bestseller: false
     },
@@ -462,7 +462,7 @@ export const products = [
         image: [p_img31],
         category: "Phones",
         subCategory: "Huawei",
-        colors: ["W", "B"],
+        colors: ["White", "Black"],
         date: 1716645345448,
         bestseller: false
     },
@@ -474,7 +474,7 @@ export const products = [
         image: [p_img32],
         category: "Phones",
         subCategory: "Huawei",
-        colors: ["W", "B"],
+        colors: ["White", "Black"],
         date: 1716646445448,
         bestseller: false
     },
@@ -486,7 +486,7 @@ export const products = [
         image: [p_img33],
         category: "Monitors",
         subCategory: "Dell",
-        colors: ["W", "B"],
+        colors: ["White", "Black"],
         date: 1716647545448,
         bestseller: false
     },
@@ -498,7 +498,7 @@ export const products = [
         image: [p_img34],
         category: "Monitors",
         subCategory: "Huawei",
-        colors: ["W", "B"],
+        colors: ["White", "Black"],
         date: 1716648645448,
         bestseller: false
     },
@@ -510,7 +510,7 @@ export const products = [
         image: [p_img35],
         category: "Headphones",
         subCategory: "B&O",
-        colors: ["W", "B"],
+        colors: ["White", "Black"],
         date: 1716649745448,
         bestseller: false
     },
@@ -522,7 +522,7 @@ export const products = [
         image: [p_img36],
         category: "Keyboards",
         subCategory: "Apple",
-        colors: ["W", "B"],
+        colors: ["White", "Black"],
         date: 1716650845448,
         bestseller: false
     },
@@ -534,7 +534,7 @@ export const products = [
         image: [p_img37],
         category: "Phones",
         subCategory: "Samsung",
-        colors: ["W", "B"],
+        colors: ["White", "Black"],
         date: 1716651945448,
         bestseller: false
     },
@@ -546,7 +546,7 @@ export const products = [
         image: [p_img38],
         category: "Laptop",
         subCategory: "Hp",
-        colors: ["W", "B"],
+        colors: ["White", "Black"],
         date: 1716653045448,
         bestseller: false
     },
@@ -558,7 +558,7 @@ export const products = [
         image: [p_img39],
         category: "Mouse",
         subCategory: "Dell",
-        colors: ["W", "B"],
+        colors: ["White", "Black"],
         date: 1716654145448,
         bestseller: false
     },
@@ -570,7 +570,7 @@ export const products = [
         image: [p_img40],
         category: "Mouse",
         subCategory: "Logitech",
-        colors: ["W", "B"],
+        colors: ["White", "Black"],
         date: 1716655245448,
         bestseller: false
     },
@@ -582,7 +582,7 @@ export const products = [
         image: [p_img41],
         category: "Keyboards",
         subCategory: "Logitech",
-        colors: ["W", "B"],
+        colors: ["White", "Black"],
         date: 1716656345448,
         bestseller: false
     },
@@ -594,7 +594,7 @@ export const products = [
         image: [p_img42],
         category: "Monitors",
         subCategory: "Logitech",
-        colors: ["W", "B"],
+        colors: ["White", "Black"],
         date: 1716657445448,
         bestseller: false
     },
@@ -606,7 +606,7 @@ export const products = [
         image: [p_img43],
         category: "Laptops",
         subCategory: "Apple",
-        colors: ["W", "B"],
+        colors: ["White", "Black"],
         date: 1716658545448,
         bestseller: false
     },
@@ -618,7 +618,7 @@ export const products = [
         image: [p_img44],
         category: "Phones",
         subCategory: "Samsung",
-        colors: ["W", "B"],
+        colors: ["White", "Black"],
         date: 1716659645448,
         bestseller: false
     },
@@ -630,7 +630,7 @@ export const products = [
         image: [p_img45],
         category: "Phones",
         subCategory: "Apple",
-        colors: ["W", "B"],
+        colors: ["White", "Black"],
         date: 1716660745448,
         bestseller: false
     },
@@ -642,7 +642,7 @@ export const products = [
         image: [p_img46],
         category: "Phones",
         subCategory: "Samsung",
-        colors: ["W", "B"],
+        colors: ["White", "Black"],
         date: 1716661845448,
         bestseller: false
     },
@@ -654,7 +654,7 @@ export const products = [
         image: [p_img47],
         category: "Laptops",
         subCategory: "Apple",
-        colors: ["W", "B"],
+        colors: ["White", "Black"],
         date: 1716662945448,
         bestseller: false
     },
@@ -666,7 +666,7 @@ export const products = [
         image: [p_img48],
         category: "Keyboards",
         subCategory: "Das",
-        colors: ["W", "B"],
+        colors: ["White", "Black"],
         date: 1716664045448,
         bestseller: false
     },
@@ -678,7 +678,7 @@ export const products = [
         image: [p_img49],
         category: "Keyboards",
         subCategory: "Dell",
-        colors: ["W", "B"],
+        colors: ["White", "Black"],
         date: 1716665145448,
         bestseller: false
     },
@@ -690,7 +690,7 @@ export const products = [
         image: [p_img50],
         category: "Mouse",
         subCategory: "Onn",
-        colors: ["W", "B"],
+        colors: ["White", "Black"],
         date: 1716666245448,
         bestseller: false
     },
@@ -702,7 +702,7 @@ export const products = [
         image: [p_img51],
         category: "Keyboards",
         subCategory: "Logitech",
-        colors: ["W", "B"],
+        colors: ["White", "Black"],
         date: 1716667345448,
         bestseller: false
     },
@@ -714,7 +714,7 @@ export const products = [
         image: [p_img52],
         category: "Laptops",
         subCategory: "Hp",
-        colors: ["W", "B"],
+        colors: ["White", "Black"],
         date: 1716668445448,
         bestseller: false
     }
