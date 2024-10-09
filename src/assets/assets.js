@@ -243,7 +243,7 @@ export const products = [
     {
         _id: "aaaam",
         name: "Dell Latitude 14-inch 2-in-1 Windows 11 pro",
-        description: "the Dell Latitude 9440 Laptop with 13th Gen Intel® Core™ i7 processors U-series, up to 64GB DDR4 upgradeable memory, ExpressConnect and ExpressCharge.",
+        description: "The Dell Latitude 9440 Laptop with 13th Gen Intel® Core™ i7 processors U-series, up to 64GB DDR4 upgradeable memory, ExpressConnect and ExpressCharge.",
         price: 320,
         image: [p_img13],
         category: "Laptops",
@@ -595,7 +595,7 @@ export const products = [
         price: 1300,
         image: [p_img42],
         category: "Monitors",
-        subCategory: "Logitech",
+        subCategory: "Huawei",
         colors: ["White", "Black"],
         date: 1716657445448,
         bestseller: false
