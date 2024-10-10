@@ -5,7 +5,7 @@ import axios from 'axios'
 
 export const ShopContext = createContext();
 
-const ShopContextProvider = (props) => {
+const ShopContextProvider = (props) => { 
 
     const currency = '$';
     const delivery_fee = 10;
@@ -13,7 +13,8 @@ const ShopContextProvider = (props) => {
     const [search, setSearch] = useState('');
     const [showSearch, setShowSearch] = useState(false)
     const [cartItems, setCartItems] = useState({});
-    const [products, setProducts] = useState([])
+    const [products, setProducts] = useState([]);
+    const [token, setToken] = useState('');
     const navigate = useNavigate();
 
     const addToCart = async(itemId, color) => {
@@ -85,10 +86,16 @@ const ShopContextProvider = (props) => {
     const getProductsData = async () => {
         try {
             const response = await axios.get(backendUrl + '/api/product/list')
-            console.log(response.data);
+            if (response.data.success) {
+                setProducts(response.data.products)
+            }else{
+                toast.error(response.data.message)
+            }
             
             
         } catch (error) {
+            console.log(error);
+            toast.error(error.message)
             
         }
         
@@ -98,15 +105,10 @@ const ShopContextProvider = (props) => {
         getProductsData()
     },[])
 
-    // useEffect(()=>{
-    //     console.log(cartItems);
-        
-    // },[cartItems])
-
     const value = {
         products, currency, delivery_fee, search, setSearch, showSearch,
         setShowSearch, cartItems, addToCart, getCartCount, updateQuantity, 
-        getCartAmount, navigate, backendUrl
+        getCartAmount, navigate, backendUrl, setToken, token
     }
     return(
         <ShopContext.Provider value={value}>
